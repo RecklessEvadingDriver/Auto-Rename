@@ -18,6 +18,7 @@ ffmpeg-python
 pytz
 humanize
 requests
+psutil
 
 # Optional: Legacy telegram bot support (if needed)
 python-telegram-bot==13.15

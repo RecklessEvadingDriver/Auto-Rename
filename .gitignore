@@ -135,3 +135,5 @@ temp/
 *.session
 *.session-journal
 rexbots.session
+logs/
+*.log
