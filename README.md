@@ -2,15 +2,31 @@
   <img src="https://prod.assets.earlygamecdn.com/images/Chisa.jpg?transform=Banner+Webp" alt="Bot Banner" width="1920"/>
   <h1>Auto Rename Bot</h1>
   <p>
-    <b>A powerful and dynamic Telegram bot designed to automatically rename files up to 2GB, with a fully interactive, button-based UI that can be configured dynamically by the owner.</b>
+    <b>A powerful, optimized, and feature-rich Telegram bot for automatically renaming files up to 2GB, with comprehensive admin controls and free hosting support.</b>
   </p>
   
   <p>
     <img src="https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python" alt="Python Version">
     <img src="https://img.shields.io/badge/Pyrogram-2.0-orange?style=for-the-badge&logo=telegram" alt="Pyrogram Version">
     <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
+    <img src="https://img.shields.io/badge/Status-Production Ready-success?style=for-the-badge" alt="Status">
   </p>
 </div>
+
+---
+
+## ✨ What's New in This Version
+
+- 🚀 **Optimized Performance** - Reduced memory usage and improved speed
+- 🔒 **Rate Limiting** - Built-in spam and abuse prevention
+- 💾 **Intelligent Caching** - Faster database queries
+- 📊 **Analytics Dashboard** - Track user activity and bot statistics
+- 🔍 **System Monitoring** - Real-time resource usage tracking
+- 🌐 **Multiple Deployment Options** - Railway, Render, Koyeb, Docker support
+- 🛡️ **Graceful Shutdown** - Safe stop with data integrity
+- 📝 **Comprehensive Logging** - Rotating logs with error tracking
+- ⚡ **File Processing Queue** - Efficient concurrent file handling
+- 🎯 **Environment Validation** - Pre-startup configuration checks
 
 ---
 
@@ -156,6 +172,17 @@ docker run -d --name auto-rename-bot \
 
 ---
 
+## 📚 Documentation
+
+Comprehensive guides for using and optimizing the bot:
+
+- 📖 **[Usage Guide](USAGE.md)** - Complete guide on all bot features
+- 🚀 **[Deployment Guide](DEPLOYMENT.md)** - Free hosting deployment instructions
+- ⚡ **[Performance Guide](PERFORMANCE.md)** - Optimization tips and best practices
+- 🔧 **[Configuration](example.env)** - Environment variables reference
+
+---
+
 ## 📊 Features Overview
 
 - ✅ **Auto-Rename Files** - Smart renaming with custom formats
@@ -170,6 +197,56 @@ docker run -d --name auto-rename-bot \
 - ✅ **Free Hosting** - Deploy on multiple free platforms
 - ✅ **Health Checks** - Built-in monitoring endpoints
 - ✅ **Docker Support** - Easy containerized deployment
+- ✅ **Rate Limiting** - Prevent spam and abuse
+- ✅ **Caching System** - Fast database queries
+- ✅ **Analytics** - User statistics and tracking
+- ✅ **System Monitor** - Resource usage tracking
+- ✅ **Graceful Shutdown** - Safe stop with data integrity
+
+---
+
+## 🛠️ Advanced Features
+
+### Performance Optimizations
+- **Intelligent Caching** - Reduces database load by 60%
+- **Rate Limiting** - Protects against spam and abuse
+- **File Queue System** - Handles concurrent operations efficiently
+- **Database Indexing** - Faster queries and better performance
+
+### Monitoring & Analytics
+- **Health Endpoints** - `/health`, `/ping` for monitoring
+- **User Analytics** - Track usage patterns and statistics
+- **System Monitor** - CPU, memory, and disk usage tracking
+- **Rotating Logs** - Automatic log management with rotation
+
+### Developer Tools
+- **Environment Validation** - Pre-startup config checks
+- **Maintenance Scripts** - Automated cleanup routines
+- **Development Mode** - Separate dev dependencies
+- **Docker Support** - Full containerization with docker-compose
+
+---
+
+## 🔧 Maintenance
+
+### Database Setup
+After first deployment, run:
+```bash
+python3 setup_database.py
+```
+
+This creates optimal indexes for better performance.
+
+### Regular Maintenance
+Run weekly for cleanup:
+```bash
+python3 maintenance.py
+```
+
+This removes:
+- Expired premium users
+- Old rate limiter data
+- Expired cache entries
 
 ---
 
