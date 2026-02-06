@@ -1,44 +1,58 @@
-# ----------------------------------------
-# 𝐌𝐀𝐃𝐄 𝐁𝐘 𝐀𝐁𝐇𝐈
-# 𝐓𝐆 𝐈𝐃 : @𝐂𝐋𝐔𝐓𝐂𝐇𝟎𝟎𝟖
-# 𝐀𝐍𝐘 𝐈𝐒𝐒𝐔𝐄𝐒 𝐎𝐑 𝐀𝐃𝐃𝐈𝐍𝐆 𝐌𝐎𝐑𝐄 𝐓𝐇𝐈𝐍𝐆𝐬 𝐂𝐀𝐍 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 𝐌𝐄
-# --
-import re, os, time
-id_pattern = re.compile(r'^.\d+$') 
-# ----------------------------------------
-# 𝐌𝐀𝐃𝐄 𝐁𝐘 𝐀𝐁𝐇𝐈
-# 𝐓𝐆 𝐈𝐃 : @𝐂𝐋𝐔𝐓𝐂𝐇𝟎𝟎𝟖
-# 𝐀𝐍𝐘 𝐈𝐒𝐒𝐔𝐄𝐒 𝐎𝐑 𝐀𝐃𝐃𝐈𝐍𝐆 𝐌𝐎𝐑𝐄 𝐓𝐇𝐈𝐍𝐆𝐬 𝐂𝐀𝐍 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 𝐌𝐄
-# --
+import re
+import os
+import time
+import sys
+
+id_pattern = re.compile(r'^.\d+$')
 class Config(object):
-    # pyro client config
-    API_ID    = os.environ.get("API_ID", "")
-    API_HASH  = os.environ.get("API_HASH", "")
+    # Pyro client config
+    API_ID = os.environ.get("API_ID", "")
+    API_HASH = os.environ.get("API_HASH", "")
     BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
     PORT = os.environ.get("PORT", "8980")
 
-    # database config
+    # Database config
     DB_NAME = os.environ.get("DB_NAME", "RexBots")     
-    DB_URL  = os.environ.get("DB_URL", "")
+    DB_URL = os.environ.get("DB_URL", "")
  
-    # other configs
+    # Other configs
     ADMIN_URL = "https://t.me/adityaabhinav"
     DUMP_CHANNEL = os.environ.get("DUMP_CHANNEL", "-1002257657458")
     DUMP = True
-    BOT_UPTIME  = time.time()
-    START_PIC   = os.environ.get("START_PIC", "https://ibb.co/Cs0zsrCn")
+    BOT_UPTIME = time.time()
+    START_PIC = os.environ.get("START_PIC", "https://ibb.co/Cs0zsrCn")
     LEADERBOARD_PIC = os.environ.get("LEADERBOARD_PIC", "https://ibb.co/RGx4RmDg")
     OWNER_ID = int(os.environ.get("OWNER_ID", "6701907262"))
     SUPPORT_CHAT = int(os.environ.get("SUPPORT_CHAT", "-1002871570975"))
-    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", ""))
+    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "0"))
     FSUB_PIC = os.environ.get("FSUB_PIC", "")
     BOT_USERNAME = os.environ.get("BOT_USERNAME", "")
     LEADERBOARD_DELETE_TIMER = 30
-    # wes response configuration     
+    # Web response configuration     
     WEBHOOK = bool(os.environ.get("WEBHOOK", "True"))
     
+    @classmethod
+    def validate(cls):
+        """Validate required environment variables"""
+        required_vars = {
+            "API_ID": cls.API_ID,
+            "API_HASH": cls.API_HASH,
+            "BOT_TOKEN": cls.BOT_TOKEN,
+            "DB_URL": cls.DB_URL,
+        }
+        
+        missing_vars = [var for var, value in required_vars.items() if not value]
+        
+        if missing_vars:
+            print(f"❌ Error: Missing required environment variables: {', '.join(missing_vars)}")
+            print("Please set these variables before starting the bot.")
+            sys.exit(1)
+        
+        print("✅ All required environment variables are set")
+        return True
+    
     #========================================================================================   
-    START_TXT = """<b>ʜᴇʏ! {mention}  
+    START_TXT = """<b>ʜᴇʏ! {mention}
 
 » ɪ ᴀᴍ ᴀᴅᴠᴀɴᴄᴇᴅ ʀᴇɴᴀᴍᴇ ʙᴏᴛ! ᴡʜɪᴄʜ ᴄᴀɴ ᴀᴜᴛᴏʀᴇɴᴀᴍᴇ ʏᴏᴜʀ ғɪʟᴇs ᴡɪᴛʜ ᴄᴜsᴛᴏᴍ ᴄᴀᴘᴛɪᴏɴ ᴀɴᴅ ᴛʜᴜᴍʙɴᴀɪʟ ᴀɴᴅ ᴀʟsᴏ sᴇǫᴜᴇɴᴄᴇ ᴛʜᴇᴍ ᴘᴇʀғᴇᴄᴛʟʏ.I ᴀʟsᴏ ʜᴀᴠᴇ sᴇᴀsᴏɴ, ᴀᴜᴅɪᴏ, ǫᴜᴀʟɪᴛʏ, ᴇᴘɪsᴏᴅᴇ ᴇxᴛʀᴀᴄᴛɪᴏɴ sʏsᴛᴇᴍ ᴀɴᴅ ᴀʟsᴏ sᴜᴘᴘᴏʀᴛs ᴀᴅᴠᴀɴᴄᴇ ғᴇᴀᴛᴜʀᴇs.</b>"""
     
@@ -114,10 +128,3 @@ class Config(object):
 ➲ /metadata: ᴄᴏᴍᴍᴀɴᴅꜱ ᴛᴏ ᴛᴜʀɴ ᴏɴ ᴏғғ ᴍᴇᴛᴀᴅᴀᴛᴀ.
 ➲ /help: ɢᴇᴛ ǫᴜɪᴄᴋ ᴀꜱꜱɪꜱᴛᴀɴᴄᴇ.</b>"""
 #================================================================================
-
-
-# ----------------------------------------
-# 𝐌𝐀𝐃𝐄 𝐁𝐘 𝐀𝐁𝐇𝐈
-# 𝐓𝐆 𝐈𝐃 : @𝐂𝐋𝐔𝐓𝐂𝐇𝟎𝟎𝟖
-# 𝐀𝐍𝐘 𝐈𝐒𝐒𝐔𝐄𝐒 𝐎𝐑 𝐀𝐃𝐃𝐈𝐍𝐆 𝐌𝐎𝐑𝐄 𝐓𝐇𝐈𝐍𝐆𝐬 𝐂𝐀𝐍 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 𝐌𝐄
-# --
