@@ -58,10 +58,9 @@ class Bot(Client):
         uptime_string = str(timedelta(seconds=uptime_seconds))
         
         for chat_id in [Config.LOG_CHANNEL, Config.SUPPORT_CHAT]:
-            if chat_id == 0:  # Skip if not configured
+            if not chat_id or chat_id == 0:  # Skip if not configured
                 continue
             try:
-                curr = datetime.now(timezone("Asia/Kolkata"))
                 await self.send_photo(
                     chat_id=chat_id,
                     photo=Config.START_PIC,
@@ -86,7 +85,7 @@ class Bot(Client):
         
         # Send shutdown notification
         for chat_id in [Config.LOG_CHANNEL, Config.SUPPORT_CHAT]:
-            if chat_id == 0:
+            if not chat_id or chat_id == 0:
                 continue
             try:
                 uptime = str(timedelta(seconds=int(time.time() - self.start_time)))

@@ -90,7 +90,7 @@ class SimpleCache:
         return len(self._cache)
 
 # Global cache instances
-user_cache = SimpleCache(ttl=300)  # 5 minutes for user data
-admin_cache = SimpleCache(ttl=600)  # 10 minutes for admin list
-channel_cache = SimpleCache(ttl=600)  # 10 minutes for channel list
-verification_cache = SimpleCache(ttl=180)  # 3 minutes for verification status
+user_cache = SimpleCache(default_ttl=300)  # 5 minutes for user data
+admin_cache = SimpleCache(default_ttl=600)  # 10 minutes for admin list
+channel_cache = SimpleCache(default_ttl=600)  # 10 minutes for channel list
+verification_cache = SimpleCache(default_ttl=180)  # 3 minutes for verification status
