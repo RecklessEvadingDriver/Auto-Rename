@@ -1,0 +1,28 @@
+app:
+  name: auto-rename-bot
+  
+  services:
+    - name: bot
+      type: web
+      instance_type: nano
+      regions:
+        - fra
+      ports:
+        - port: 8980
+          protocol: http
+      env:
+        - key: PORT
+          value: "8980"
+      build:
+        type: dockerfile
+        dockerfile: Dockerfile
+      health_checks:
+        - path: /health
+          port: 8980
+          protocol: http
+          interval: 60s
+          timeout: 10s
+          grace_period: 30s
+      scaling:
+        min: 1
+        max: 1

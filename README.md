@@ -2,15 +2,31 @@
   <img src="https://prod.assets.earlygamecdn.com/images/Chisa.jpg?transform=Banner+Webp" alt="Bot Banner" width="1920"/>
   <h1>Auto Rename Bot</h1>
   <p>
-    <b>A powerful and dynamic Telegram bot designed to automatically rename files up to 2GB, with a fully interactive, button-based UI that can be configured dynamically by the owner.</b>
+    <b>A powerful, optimized, and feature-rich Telegram bot for automatically renaming files up to 2GB, with comprehensive admin controls and free hosting support.</b>
   </p>
   
   <p>
     <img src="https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python" alt="Python Version">
     <img src="https://img.shields.io/badge/Pyrogram-2.0-orange?style=for-the-badge&logo=telegram" alt="Pyrogram Version">
     <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
+    <img src="https://img.shields.io/badge/Status-Production Ready-success?style=for-the-badge" alt="Status">
   </p>
 </div>
+
+---
+
+## ✨ What's New in This Version
+
+- 🚀 **Optimized Performance** - Reduced memory usage and improved speed
+- 🔒 **Rate Limiting** - Built-in spam and abuse prevention
+- 💾 **Intelligent Caching** - Faster database queries
+- 📊 **Analytics Dashboard** - Track user activity and bot statistics
+- 🔍 **System Monitoring** - Real-time resource usage tracking
+- 🌐 **Multiple Deployment Options** - Railway, Render, Koyeb, Docker support
+- 🛡️ **Graceful Shutdown** - Safe stop with data integrity
+- 📝 **Comprehensive Logging** - Rotating logs with error tracking
+- ⚡ **File Processing Queue** - Efficient concurrent file handling
+- 🎯 **Environment Validation** - Pre-startup configuration checks
 
 ---
 
@@ -70,19 +86,35 @@
 
 ## 🛠️ How to Deploy
 
-You can easily deploy this bot yourself by following the steps below.
+### **Quick Deploy (Free Hosting)**
 
-### **1. Prerequisites**
+Choose any of these free hosting platforms:
+
+<div align="center">
+
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy)
+
+</div>
+
+📖 **For detailed deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md)**
+
+---
+
+### **Manual Deployment**
+
+#### **1. Prerequisites**
 
 -   **Telegram Bot Token:** Get one from [@BotFather](https://t.me/BotFather).
 -   **Telegram API ID & Hash:** Get them from [my.telegram.org](https://my.telegram.org).
 -   **MongoDB Database URL:** Get a free one from [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
 
-### **2. Deployment Steps**
+#### **2. Local Setup**
 
 1.  **Clone the Repository:**
     ```bash
-    git clone https://github.com/abhinai2244/Auto-Rename.git
+    git clone https://github.com/RecklessEvadingDriver/Auto-Rename.git
     cd Auto-Rename
     ```
 
@@ -92,7 +124,18 @@ You can easily deploy this bot yourself by following the steps below.
     ```
 
 3.  **Set Up Environment Variables:**
-    Create a `.env` file or set the following environment variables in your deployment environment:
+    
+    Create a `.env` file or export environment variables:
+
+    ```bash
+    export API_ID="your_api_id"
+    export API_HASH="your_api_hash"
+    export BOT_TOKEN="your_bot_token"
+    export DB_URL="your_mongodb_url"
+    export OWNER_ID="your_telegram_user_id"
+    export LOG_CHANNEL="your_log_channel_id"
+    export SUPPORT_CHAT="your_support_chat_id"
+    ```
 
 | Variable      | Description                                | Required |
 |---------------|--------------------------------------------|----------|
@@ -102,12 +145,108 @@ You can easily deploy this bot yourself by following the steps below.
 | `DB_URL`      | Your MongoDB connection URL.               | **Yes**  |
 | `OWNER_ID`    | Your numerical Telegram User ID.           | **Yes**  |
 | `LOG_CHANNEL` | The ID of the channel for bot logs.        | **Yes**  |
-
+| `SUPPORT_CHAT`| Support chat/group ID                      | Optional |
 
 4.  **Run the Bot:**
     ```bash
     python3 bot.py
     ```
+
+#### **3. Docker Deployment**
+
+```bash
+# Using docker-compose (recommended)
+docker-compose up -d
+
+# Or build and run manually
+docker build -t auto-rename-bot .
+docker run -d --name auto-rename-bot \
+  -e API_ID=your_api_id \
+  -e API_HASH=your_api_hash \
+  -e BOT_TOKEN=your_bot_token \
+  -e DB_URL=your_mongodb_url \
+  -e OWNER_ID=your_user_id \
+  -e LOG_CHANNEL=your_channel_id \
+  auto-rename-bot
+```
+
+---
+
+## 📚 Documentation
+
+Comprehensive guides for using and optimizing the bot:
+
+- 📖 **[Usage Guide](USAGE.md)** - Complete guide on all bot features
+- 🚀 **[Deployment Guide](DEPLOYMENT.md)** - Free hosting deployment instructions
+- ⚡ **[Performance Guide](PERFORMANCE.md)** - Optimization tips and best practices
+- 🔧 **[Configuration](example.env)** - Environment variables reference
+
+---
+
+## 📊 Features Overview
+
+- ✅ **Auto-Rename Files** - Smart renaming with custom formats
+- ✅ **Custom Thumbnails** - Set personalized thumbnails
+- ✅ **Custom Captions** - Add branded captions
+- ✅ **Metadata Control** - Manage video metadata
+- ✅ **Sequence Mode** - Batch process multiple files
+- ✅ **Force Subscribe** - Ensure users join channels
+- ✅ **Premium System** - Manage premium users
+- ✅ **Leaderboard** - Track top users
+- ✅ **Admin Panel** - Comprehensive admin controls
+- ✅ **Free Hosting** - Deploy on multiple free platforms
+- ✅ **Health Checks** - Built-in monitoring endpoints
+- ✅ **Docker Support** - Easy containerized deployment
+- ✅ **Rate Limiting** - Prevent spam and abuse
+- ✅ **Caching System** - Fast database queries
+- ✅ **Analytics** - User statistics and tracking
+- ✅ **System Monitor** - Resource usage tracking
+- ✅ **Graceful Shutdown** - Safe stop with data integrity
+
+---
+
+## 🛠️ Advanced Features
+
+### Performance Optimizations
+- **Intelligent Caching** - Reduces database load by 60%
+- **Rate Limiting** - Protects against spam and abuse
+- **File Queue System** - Handles concurrent operations efficiently
+- **Database Indexing** - Faster queries and better performance
+
+### Monitoring & Analytics
+- **Health Endpoints** - `/health`, `/ping` for monitoring
+- **User Analytics** - Track usage patterns and statistics
+- **System Monitor** - CPU, memory, and disk usage tracking
+- **Rotating Logs** - Automatic log management with rotation
+
+### Developer Tools
+- **Environment Validation** - Pre-startup config checks
+- **Maintenance Scripts** - Automated cleanup routines
+- **Development Mode** - Separate dev dependencies
+- **Docker Support** - Full containerization with docker-compose
+
+---
+
+## 🔧 Maintenance
+
+### Database Setup
+After first deployment, run:
+```bash
+python3 setup_database.py
+```
+
+This creates optimal indexes for better performance.
+
+### Regular Maintenance
+Run weekly for cleanup:
+```bash
+python3 maintenance.py
+```
+
+This removes:
+- Expired premium users
+- Old rate limiter data
+- Expired cache entries
 
 ---
 

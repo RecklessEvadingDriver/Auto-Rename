@@ -1,14 +1,25 @@
+# Core dependencies
 pyrogram==2.0.80
 pyromod
 TgCrypto
+aiohttp
+
+# Database
 motor
 dnspython
+pymongo
+
+# Media processing
 hachoir
 Pillow
-aiohttp
+ffmpeg-python
+
+# Utilities
 pytz
 humanize
-ffmpeg-python
-python-telegram-bot==13.15
-pymongo
 requests
+psutil
+
+# Optional: Legacy telegram bot support (if needed)
+python-telegram-bot==13.15
+
